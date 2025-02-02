@@ -1,0 +1,26 @@
+{
+  "name": "backend-101-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E1Duder1no/backend-101-monorepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/E1Duder1no/backend-101-monorepo/issues"
+  },
+  "homepage": "https://github.com/E1Duder1no/backend-101-monorepo#readme",
+  "description": "",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "changesets": "^1.0.2",
+    "husky": "^9.1.7"
+  }
+}
