@@ -2,10 +2,22 @@
   "name": "backend-101-monorepo",
   "version": "1.0.0",
   "main": "index.js",
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
-    "prepare": "husky",
-    "changeset": "changeset"
+    "test": "turbo test --filter @packages/*",
+    "dev": "turbo dev --filter @packages/*",
+    "lint": "turbo lint --filter @packages/*",
+    "check-types": "turbo check-types --filter @packages/*",
+    "build": "turbo build --filter @packages/*",
+    "generate:package": "./scripts/generate-package.sh",
+    "generate:app": "./scripts/generate-app.sh",
+    "remove:package": "./scripts/remove-package.sh",
+    "remove:app": "./scripts/remove-app.sh",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -20,8 +32,16 @@
   "homepage": "https://github.com/E1Duder1no/backend-101-monorepo#readme",
   "description": "",
   "devDependencies": {
-    "@changesets/cli": "^2.27.12",
-    "changesets": "^1.0.2",
-    "husky": "^9.1.7"
+    "@eslint/js": "^9.19.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.4.2",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2",
+    "turbo": "^2.4.0",
+    "typescript-eslint": "^8.22.0"
   }
 }
